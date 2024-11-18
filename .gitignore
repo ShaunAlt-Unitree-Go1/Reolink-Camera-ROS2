@@ -1,3 +1,6 @@
+# pyenv virtual env setup
+.python-version
+
 devel/
 logs/
 build/
