@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ament_pep257.main import main
-import pytest
+from ament_pep257.main import main # type: ignore
+import pytest # type: ignore
 
 
 @pytest.mark.linter
