@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'camera_reader=camera_ros2.camera_reader:main',
         ],
     },
 )
