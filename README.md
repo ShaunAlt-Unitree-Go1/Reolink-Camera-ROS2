@@ -60,9 +60,9 @@ This section presumes that you have already setup your device, router, and camer
     - Single Camera Streamer:
         ``` bash
         ros2 run camera_ros2 camera_reader \
-            --conn_uid <Camera-Username>
-            --conn_pwd <Camera-Password>
-            --conn_ip <Camera-IP>
+            -p camera_uid:=<Camera-Username>
+            -p camera_pwd:=<Camera-Password>
+            -p camera_ip:=<Camera-IP>
         ```
         You can run the Single Camera Streamer with additional arguments, the documentation for which you can find in the [camera_streamer.py](camera_ros2/camera_ros2/camera_reader.py) source code.
     - Multiple Cameras Streamer:
