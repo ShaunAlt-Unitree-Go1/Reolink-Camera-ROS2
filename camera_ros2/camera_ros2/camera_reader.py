@@ -36,7 +36,7 @@ import rclpy # type: ignore
 from rclpy.node import Node # type: ignore
 
 # used for regex string parsing
-import regex as re # type: ignore
+import re
 
 # used for publishing `sensor_msgs.msg.Image` messages
 from sensor_msgs.msg import Image # type: ignore
@@ -121,6 +121,12 @@ class CameraReader(Node):
     - __init__(...) : `None`
         - Constructor Method.
         - Creates a new `CameraReader` object.
+    - __repr__() : `str`
+        - Official Representation Method.
+        - Returns the official string representation of this object.
+    - __str__() : `str`
+        - Informal Representation Method.
+        - Returns a short, informal string representation of this object.
     - _publish() : `None`
         - Instance Method.
         - Publishes the camera data as a ROS message.
@@ -198,6 +204,46 @@ class CameraReader(Node):
 
         # log creation
         self.logger.info(f'Created {self!r}')
+
+    # ================================
+    # Method - Official Representation
+    def __repr__(self) -> str:
+        ''' Official Representation Method. '''
+        output = 'CameraReader('
+        for val in [
+                'conn_rtsp',
+                'logger',
+                'param_camera_ip',
+                'param_camera_port',
+                'param_camera_pwd',
+                'param_camera_suffix',
+                'param_camera_uid',
+                'param_publish_rate',
+                'param_resize',
+                'param_topic',
+        ]:
+            try:
+                output += f'\n\t{val} = {getattr(self, val)},'
+            except Exception as e:
+                output += f'\n\t{val} <ERROR> = {e}'
+        return f'{output}\n)'
+
+    # ================================
+    # Method - Informal Representation
+    def __str__(self) -> str:
+        ''' Informal Representation Method. '''
+        output = 'CameraReader('
+        for val in [
+                'conn_rtsp',
+                'param_publish_rate',
+                'param_resize',
+                'param_topic',
+        ]:
+            try:
+                output += f' {val} = {getattr(self, val)},'
+            except Exception as e:
+                output += f' {val} <ERROR> = {e}'
+        return f'{output} )'
 
     # =================================
     # Property - RTSP Connection String
