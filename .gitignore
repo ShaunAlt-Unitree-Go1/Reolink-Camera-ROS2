@@ -1,6 +1,9 @@
 # pyenv virtual env setup
 .python-version
 
+# mac .DS_Store
+.DS_Store
+
 devel/
 logs/
 build/
