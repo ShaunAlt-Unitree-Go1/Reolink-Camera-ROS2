@@ -66,4 +66,20 @@ This section presumes that you have already setup your device, router, and camer
         ```
         You can run the Single Camera Streamer with additional arguments, the documentation for which you can find in the [camera_streamer.py](camera_ros2/camera_ros2/camera_reader.py) source code.
     - Multiple Cameras Streamer:
-        - TODO.
+        - This is identical to the Single Camera Streamer, except that now you will add a namespace to each camera you create.
+        - Terminal 1:
+            ``` bash
+            ros2 run camera_ros2 camera_reader \
+                -r __ns:=/<Camera-1-Namespace>
+                -p camera_uid:=<Camera-1-Username>
+                -p camera_pwd:=<Camera-1-Password>
+                -p camera_ip:=<Camera-1-IP>
+            ```
+        - Terminal 2:
+            ``` bash
+            ros2 run camera_ros2 camera_reader \
+                -r __ns:=/<Camera-2-Namespace>
+                -p camera_uid:=<Camera-2-Username>
+                -p camera_pwd:=<Camera-2-Password>
+                -p camera_ip:=<Camera-2-IP>
+            ```
