@@ -16,7 +16,7 @@ The following ROS2 versions have been tested and are supported by this package.
 | ROS2 Version | Ubuntu Version | Single Camera | Multiple Camera |
 | :---: | :---: | :---: | :---: |
 | [Jazzy](https://docs.ros.org/en/jazzy/Installation.html) | [24.04](https://cdimage.ubuntu.com/releases/noble/release/) | &#9746; | &#9746; |
-| [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9746; | &#9746; |
+| [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9745; | &#9745; |
 | [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9746; | &#9746; |
 | [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | &#9746; | &#9746; |
 | [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | &#9746; | &#9746; |
