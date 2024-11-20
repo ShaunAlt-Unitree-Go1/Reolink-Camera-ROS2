@@ -83,3 +83,4 @@ This section presumes that you have already setup your device, router, and camer
                 -p camera_pwd:=<Camera-2-Password>
                 -p camera_ip:=<Camera-2-IP>
             ```
+        - Extra cameras can be connected to in additional terminals by following the same format.
