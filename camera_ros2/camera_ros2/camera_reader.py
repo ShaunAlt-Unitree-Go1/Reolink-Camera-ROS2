@@ -332,7 +332,7 @@ def main(
         topic: Any = None,
 ) -> None:
     # initialize rclpy
-    rclpy.init(args = args)
+    rclpy.init(args = None)
 
     # validate arguments
     try:
