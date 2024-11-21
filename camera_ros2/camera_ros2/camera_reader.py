@@ -136,7 +136,7 @@ class CameraReader(Node):
     # Static Fields
     DEFAULT_CAM_PORT = 554
     ''' The default port to use for the RTSP connection string. '''
-    DEFAULT_CAM_SUFF = 'h264Preview_01_Main'
+    DEFAULT_CAM_SUFF = 'h264Preview_01_main'
     ''' The default suffix to use for the RTSP connection string. '''
     DEFAULT_RESIZE = (640, 460)
     ''' The default (width, height) to resize the image data to. '''
