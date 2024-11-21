@@ -7,6 +7,7 @@
 - [Checking Camera Username + Resetting Password](#checking-camera-username--resetting-password)
 - [Changing Camera Network](#changing-camera-network)
 - [Enabling RTSP Streaming](#enabling-rtsp-streaming)
+- [Testing RTSP Streaming](#testing-rtsp-streaming)
 
 ## What's in the Box
 The camera being used for this project is the [Reolink RLC-840WA](https://reolink.com/au/product/rlc-840wa/).
@@ -88,3 +89,13 @@ To enable RTSP streaming with the camera, open the Reolink Client App and comple
 5. Enable ONVIF, clicking 'Confirm' when the alert box appears.
 ![Camera ONVIF](imgs/setup-camera/Camera-ONVIF.png)
 6. Click 'Save' to save the network configuration changes.
+
+## Testing RTSP Streaming
+You can test if you are able to stream the camera data using RTSP by using the FFMPEG Player.
+``` bash
+sudo apt install ffmpeg
+export CAMERA_UID="<Camera-Username>"
+export CAMERA_PWD="<Camera-Password>"
+export CAMERA_IP="<Camera-IP>"
+export CAMERA_RTSP="rtsp://$CAMERA_UID:$CAMERA_PWD@$CAMERA_IP:554/h264Preview_01_main"
+ffmpeg -i $CAMERA_RTSP -f sdl "Camera Stream"
