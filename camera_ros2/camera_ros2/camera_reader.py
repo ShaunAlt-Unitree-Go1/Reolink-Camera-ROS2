@@ -171,7 +171,7 @@ class CameraReader(Node):
         super().__init__('camera_reader')
 
         # log start of creation
-        self.logger.info('Creating CameraReader()')
+        self.logger.debug('Creating CameraReader()')
 
         # set ros parameters
         self.declare_parameter('camera_ip', '')
@@ -475,7 +475,7 @@ class CameraReader(Node):
         self._pub.publish(self._bridge.cv2_to_imgmsg(frame))
 
         # log publish
-        self.logger.info(f'Published frame {self._frame_num}')
+        self.logger.debug(f'Published frame {self._frame_num}')
 
         # increment frame number
         self._frame_num += 1
