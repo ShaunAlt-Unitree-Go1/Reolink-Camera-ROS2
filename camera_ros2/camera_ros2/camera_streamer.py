@@ -49,12 +49,17 @@ class CameraStreamer(Node):
     - logger : `logging.Logger`
         - Readonly.
         - The logger for this node.
+    - param_title : `str`
+        - Readonly.
+        - The title of the video stream.
     - param_topic : `str`
         - Readonly.
         - The topic to read the camera data from.
 
     Static Fields
     -
+    - DEFAULT_TITLE : `str`
+        - The default title to use for the video stream.
     - DEFAULT_TOPIC : `str`
         - The default topic to read the camera data from.
 
@@ -77,6 +82,8 @@ class CameraStreamer(Node):
 
     # =============
     # Static Fields
+    DEFAULT_TITLE = 'Camera Image'
+    ''' The default title to use for the video stream. '''
     DEFAULT_TOPIC = 'camera_image'
     ''' The default topic to read the camera data from. '''
 
@@ -104,6 +111,7 @@ class CameraStreamer(Node):
         self.logger.debug('Creating CameraStreamer()')
 
         # set ros parameters
+        self.declare_parameter('title', CameraStreamer.DEFAULT_TITLE)
         self.declare_parameter('topic', CameraStreamer.DEFAULT_TOPIC)
 
         # create the image converter
@@ -123,6 +131,7 @@ class CameraStreamer(Node):
         output = 'CameraStreamer('
         for val in [
                 'logger',
+                'param_title',
                 'param_topic',
         ]:
             try:
@@ -137,6 +146,7 @@ class CameraStreamer(Node):
         ''' Informal Representation Method. '''
         output = 'CameraStreamer('
         for val in [
+                'param_title',
                 'param_topic',
         ]:
             try:
@@ -151,6 +161,28 @@ class CameraStreamer(Node):
     def logger(self) -> logging.Logger:
         ''' The logger for this node. '''
         return self.get_logger()
+    
+    # ================================
+    # Property - ROS Parameter - Title
+    @property
+    def param_title(self) -> str:
+        ''' The title of the video stream. '''
+
+        # get `title` parameter value
+        val: str = (
+            self.get_parameter('title') \
+            .get_parameter_value() \
+            .string_value
+        )
+
+        # validate the value (not empty)
+        if val:
+            return val
+        
+        raise ValueError(
+            'Attempted to get ROS parameter `title`, got invalid value ' \
+            + f'{val!r}'
+        )
     
     # ================================
     # Property - ROS Parameter - Topic
@@ -194,7 +226,7 @@ class CameraStreamer(Node):
         '''
 
         # convert message to image + display
-        cv2.imshow("Camera Video", self._bridge.imgmsg_to_cv2(msg))
+        cv2.imshow(self.param_title, self._bridge.imgmsg_to_cv2(msg))
         cv2.waitKey(1)
 
 
