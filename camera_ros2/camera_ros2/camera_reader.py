@@ -14,9 +14,6 @@ Reads the data from a RTSP stream, and publishes the data as a ROS
 # Imports
 # =============================================================================
 
-# used for system arguments
-import argparse
-
 # used for converting opencv images to `sensor_msgs.msg.Image`
 from cv_bridge import CvBridge # type: ignore
 
@@ -25,9 +22,6 @@ import cv2 # type: ignore
 
 # used for logging data
 import logging
-
-# used for reading environment variables
-import os
 
 # used for running ros2
 import rclpy # type: ignore
@@ -40,13 +34,6 @@ import re
 
 # used for publishing `sensor_msgs.msg.Image` messages
 from sensor_msgs.msg import Image # type: ignore
-
-# used for type-hinting
-from typing import (
-    Any, # any type
-    Optional, # nullable data type
-    Tuple, # tuple data type
-)
 
 
 # =============================================================================
@@ -118,7 +105,7 @@ class CameraReader(Node):
 
     Methods
     -
-    - __init__(...) : `None`
+    - __init__() : `None`
         - Constructor Method.
         - Creates a new `CameraReader` object.
     - __repr__() : `str`

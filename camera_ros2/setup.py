@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'camera_reader=camera_ros2.camera_reader:main',
+            'camera_streamer=camera_ros2.camera_streamer:main',
         ],
     },
 )
