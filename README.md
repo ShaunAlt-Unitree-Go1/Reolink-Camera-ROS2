@@ -12,16 +12,15 @@ Created by: Shaun Altmann (saltmann@deakin.edu.au).
 
 ## Supports
 The following ROS2 versions have been tested and are supported by this package.
-<!-- `&#9745;` = Tick in Box, `&#9746;` = Cross in Box -->
 | ROS2 Version | Ubuntu Version | Single Camera | Multiple Camera |
 | :---: | :---: | :---: | :---: |
-| [Jazzy](https://docs.ros.org/en/jazzy/Installation.html) | [24.04](https://cdimage.ubuntu.com/releases/noble/release/) | &#9746; | &#9746; |
-| [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9745; | &#9745; |
-| [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9745; | &#9745; |
-| [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | &#9746; | &#9746; |
-| [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | &#9746; | &#9746; |
-| [Eloquent](https://docs.ros.org/en/eloquent/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | &#9746; | &#9746; |
-| [Dashing](https://docs.ros.org/en/dashing/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | &#9746; | &#9746; |
+| [Jazzy](https://docs.ros.org/en/jazzy/Installation.html) | [24.04](https://cdimage.ubuntu.com/releases/noble/release/) | ❌ | ❌ |
+| [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
+| [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
+| [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ❌ | ❌ |
+| [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ❌ | ❌ |
+| [Eloquent](https://docs.ros.org/en/eloquent/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | ❌ | ❌ |
+| [Dashing](https://docs.ros.org/en/dashing/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | ❌ | ❌ |
 
 
 ## Hardware
