@@ -17,7 +17,7 @@ The following ROS2 versions have been tested and are supported by this package.
 | :---: | :---: | :---: | :---: |
 | [Jazzy](https://docs.ros.org/en/jazzy/Installation.html) | [24.04](https://cdimage.ubuntu.com/releases/noble/release/) | &#9746; | &#9746; |
 | [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9745; | &#9745; |
-| [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9746; | &#9746; |
+| [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | &#9745; | &#9745; |
 | [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | &#9746; | &#9746; |
 | [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | &#9746; | &#9746; |
 | [Eloquent](https://docs.ros.org/en/eloquent/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | &#9746; | &#9746; |
@@ -56,31 +56,15 @@ This section presumes that you have already setup your device, router, and camer
     colcon build
     source install/setup.sh
     ```
-5. Run the ROS2 script you require.
-    - Single Camera Streamer:
+5. Run the ROS2 Camera Reader + Streamer.
+    - To just run a single reader, use the following:
         ``` bash
-        ros2 run camera_ros2 camera_reader \
-            -p camera_uid:=<Camera-Username>
-            -p camera_pwd:=<Camera-Password>
-            -p camera_ip:=<Camera-IP>
+        ros2 launch camera_ros2 launch_camera_read_stream \
+            namespace:='<Camera-Name (e.g. "Camera001")>' \
+            camera_uid:='<Camera-Username (e.g. "admin")>' \
+            camera_pwd:='<Camera-Password (e.g. "Camera001!")' \
+            camera_ip:='<Camera-IP (e.g. "192.168.0.10")'
         ```
-        You can run the Single Camera Streamer with additional arguments, the documentation for which you can find in the [camera_streamer.py](camera_ros2/camera_ros2/camera_reader.py) source code.
-    - Multiple Cameras Streamer:
-        - This is identical to the Single Camera Streamer, except that now you will add a namespace to each camera you create.
-        - Terminal 1:
-            ``` bash
-            ros2 run camera_ros2 camera_reader \
-                -r __ns:=/<Camera-1-Namespace>
-                -p camera_uid:=<Camera-1-Username>
-                -p camera_pwd:=<Camera-1-Password>
-                -p camera_ip:=<Camera-1-IP>
-            ```
-        - Terminal 2:
-            ``` bash
-            ros2 run camera_ros2 camera_reader \
-                -r __ns:=/<Camera-2-Namespace>
-                -p camera_uid:=<Camera-2-Username>
-                -p camera_pwd:=<Camera-2-Password>
-                -p camera_ip:=<Camera-2-IP>
-            ```
-        - Extra cameras can be connected to in additional terminals by following the same format.
+    - To add a streamer to this, add the following argument to the above command: `create_streamer:="True"`.
+    - You can use this process to read/stream multiple cameras at once by opening a new terminal tab/window, and running the exact same command with the values for the new camera.
+    - The image data from the cameras will be published on the `/<namespace>/camera_image` ROS2 topic.
