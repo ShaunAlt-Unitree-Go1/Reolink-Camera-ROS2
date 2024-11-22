@@ -3,6 +3,7 @@ Wirelessly stream data from the Reolink RTC-840WA camera and publish it in ROS2.
 
 ## Table of Contents
 - [Contributors](#contributors)
+- [Supports](#supports)
 - [Hardware](#hardware)
 - [Setup](#setup)
 - [Usage](#usage)
@@ -16,8 +17,8 @@ The following ROS2 versions have been tested and are supported by this package.
 | :---: | :---: | :---: | :---: |
 | [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
 | [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
-| [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ❌ | ❌ |
-| [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ❌ | ❌ |
+| [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ✔️ | ✔️ |
+| [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ✔️ | ✔️ |
 
 ## Hardware
 This project implements the following hardware:
