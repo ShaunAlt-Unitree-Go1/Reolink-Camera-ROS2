@@ -14,14 +14,10 @@ Created by: Shaun Altmann (saltmann@deakin.edu.au).
 The following ROS2 versions have been tested and are supported by this package.
 | ROS2 Version | Ubuntu Version | Single Camera | Multiple Camera |
 | :---: | :---: | :---: | :---: |
-| [Jazzy](https://docs.ros.org/en/jazzy/Installation.html) | [24.04](https://cdimage.ubuntu.com/releases/noble/release/) | ❌ | ❌ |
 | [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
 | [Humble](https://docs.ros.org/en/humble/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
 | [Galactic](https://docs.ros.org/en/galactic/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ❌ | ❌ |
 | [Foxy](https://docs.ros.org/en/foxy/Installation.html) | [20.04](https://cdimage.ubuntu.com/releases/focal/release/) | ❌ | ❌ |
-| [Eloquent](https://docs.ros.org/en/eloquent/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | ❌ | ❌ |
-| [Dashing](https://docs.ros.org/en/dashing/Installation.html) | [18.04](https://cdimage.ubuntu.com/releases/bionic/release/) | ❌ | ❌ |
-
 
 ## Hardware
 This project implements the following hardware:
@@ -58,7 +54,7 @@ This section presumes that you have already setup your device, router, and camer
 5. Run the ROS2 Camera Reader + Streamer.
     - To just run a single reader, use the following:
         ``` bash
-        ros2 launch camera_ros2 launch_camera_read_stream \
+        ros2 launch camera_ros2 launch_camera_read_stream.py \
             namespace:='<Camera-Name (e.g. "Camera001")>' \
             camera_uid:='<Camera-Username (e.g. "admin")>' \
             camera_pwd:='<Camera-Password (e.g. "Camera001!")' \
