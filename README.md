@@ -13,6 +13,7 @@ Created by: Shaun Altmann (saltmann@deakin.edu.au).
 
 ## Supports
 The following ROS2 versions have been tested and are supported by this package.
+<!-- Tick: ✔️, Cross: ✖️ -->
 | ROS2 Version | Ubuntu Version | Single Camera | Multiple Camera |
 | :---: | :---: | :---: | :---: |
 | [Iron](https://docs.ros.org/en/iron/Installation.html) | [22.04](https://cdimage.ubuntu.com/releases/jammy/release/) | ✔️ | ✔️ |
@@ -45,7 +46,7 @@ This section presumes that you have already setup your device, router, and camer
 3. Install ROS2 dependencies.
     ``` bash
     cd ~/ros2_camera_stream_ws
-    rosdep install --from-paths src --ignore-src -y
+    rosdep install --from-paths src --ignore-src -y --ros-distro <ros-distro>
     ```
 4. Build the workspace.
     ``` bash
