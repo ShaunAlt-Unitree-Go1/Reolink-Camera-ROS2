@@ -13,11 +13,11 @@ Streams image data from a topic being published to by a `CameraReader`.
 # Imports
 # =============================================================================
 
-# used for converting `sensor_msgs.msg.Image` into opencv images
-from cv_bridge import CvBridge # type: ignore
-
 # used for opencv2 image processing
 import cv2 # type: ignore
+
+# used for converting `sensor_msgs.msg.Image` into opencv images
+from cv_bridge import CvBridge # type: ignore
 
 # used for logging data
 import logging

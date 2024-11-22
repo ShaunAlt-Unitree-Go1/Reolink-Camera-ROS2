@@ -14,11 +14,11 @@ Reads the data from a RTSP stream, and publishes the data as a ROS
 # Imports
 # =============================================================================
 
-# used for converting opencv images to `sensor_msgs.msg.Image`
-from cv_bridge import CvBridge # type: ignore
-
 # used for opencv2 image processing
 import cv2 # type: ignore
+
+# used for converting opencv images to `sensor_msgs.msg.Image`
+from cv_bridge import CvBridge # type: ignore
 
 # used for logging data
 import logging
