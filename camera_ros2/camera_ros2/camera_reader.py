@@ -35,6 +35,11 @@ import re
 # used for publishing `sensor_msgs.msg.Image` messages
 from sensor_msgs.msg import Image # type: ignore
 
+# used for type-hinting
+from typing import (
+    Tuple, # tuple data type
+)
+
 
 # =============================================================================
 # Camera Reader Node
@@ -385,7 +390,7 @@ class CameraReader(Node):
     # =======================================
     # Property - ROS Parameter - Image Resize
     @property
-    def param_resize(self) -> tuple[int, int]:
+    def param_resize(self) -> Tuple[int, int]:
         ''' The (width, height) to resize the image data to. '''
 
         # get `resize` parameter value
